@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+	<title>Tronget`s todo</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:regular" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
+	<script defer src="js/modal.js"></script>
+	<script defer src="js/form.js"></script>
+	<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+	<script defer src="js/script.js"></script>
+	<script defer src="js/search.js"></script>
+	<script defer src="js/filter.js"></script>
+</head>
+<body>
+	<div class="new-deal-aside">
+		<div class="new-deal-aside__container">
+			<h2>Добавить новое дело:</h2>
+			<button class="new-deal-aside__btn"></button>
+		</div>
+	</div>
+	<div class="todo">
+		<div class="todo__container">
+			<form class="search" action="#" method="get">
+				<span class="search-icon iconify" data-icon="ant-design:search-outlined" style="color: #999;" data-width="26" data-height="26" data-rotate="90deg"></span>
+				<span class="filter-btn iconify" data-icon="clarity:filter-solid"></span>
+				<input class="search-input" type="search" placeholder="Поиск..." name="search" id="search">
+			</form>
+			
+			<div class="deals-container">
+			</div>
+			<div class="no-deals">
+				<span>Здесь еще нет ваших дел...</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal close new-deal">
+		<div class="modal-container">
+			<span class="cross iconify" data-icon="akar-icons:cross"></span>
+			<form class="deal-form" action="#" method="post">
+				<div class="form">
+					<label class="label-text" for="deal">Новое дело:</label>
+					<input type="text" name="deal" id="deal">
+				</div>
+				<div class="form range-form">
+					<label for="importance">Важность дела:</label>
+					<input type="range" name="importance" id="importance" min="0" max="100" value="50">
+					<span>5</span>
+				</div>
+				<div class="categories">
+					<div class="category-item select">
+						<span class="iconify" data-icon="akar-icons:star"></span>
+						<p>Произвольное</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="icon-park-outline:sport"></span>
+						<p>Спорт</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="cil:shower"></span>
+						<p>Душ</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="fluent:bowl-salad-20-regular"></span>
+						<p>Кулинария</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="ci:heart-outline"></span>
+						<p>Свидание</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="bxs:book-bookmark"></span>
+						<p>Чтение</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="carbon:idea"></span>
+						<p>Саморазвитие</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="ph:books-duotone"></span>
+						<p>Учеба</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="healthicons:cleaning-outline"></span>
+						<p>Уборка</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="icon-park-solid:sleep-two"></span>
+						<p>Сон</p>
+					</div>
+					<div class="category-item">
+						<span class="iconify" data-icon="fa-solid:walking"></span>
+						<p>Прогулка</p>
+					</div>
+				</div>
+			</form>
+			<button class="deal-form__btn btn">Готово</button>
+		</div>
+	</div>
+
+	<div class="filter close">
+		<div class="filter__aside">
+			<div class="filter__container">
+				<span class="cross iconify" data-icon="akar-icons:cross"></span>
+				<header class="filter__header">
+					<h3>Фильтр</h3>
+					<span class="clear-filter">сбросить</span>
+				</header>
+				<p>Сортировать по важности:</p>
+				<div class="filter__importance">
+					<input id="descending" type="radio" name="importance-filter"></input>
+					<label for="descending">Убывание</label>
+					<input id="increase" type="radio" name="importance-filter"></input>
+					<label for="increase">Возрастание</label>
+				</div>
+				<p>Сортировать по категориям:</p>
+				<div class="filter__category-container">
+				</div>
+				<button class="accept-filter-btn btn">Применить</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
